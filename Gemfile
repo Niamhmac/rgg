@@ -43,5 +43,7 @@ group :development, :test do
   gem 'spring'
   #line from tutorial
   gem 'devise'
+  gem "letsrate", :git => "git://github.com/iammyr/letsrate.git"
+
 
 end
