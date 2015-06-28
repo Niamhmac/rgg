@@ -1,8 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Places</h1>
-here
-<table>
+ <!-- <table class="table" role="table">
   <thead>
     <tr>
       <th>Name</th>
@@ -15,7 +14,6 @@ here
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
     <% @places.each do |place| %>
       <tr>
@@ -38,7 +36,39 @@ here
       </tr>
     <% end %>
   </tbody>
-</table>
+</table>  -->
+<% @places.in_groups_of(3) do |group| %>
+  <div class="row">
+    <% group.compact.each do |place| %>
+      <div class="span4">
+
+
+       <%= image_tag(place.picture_url, :width => '20%') if place.picture.present? %>
+        <h4><%= link_to place.name, place %></h4>
+        <%= place.description %>
+
+
+  <%= place.address %>
+  <%= place.latitude %>
+<%= place.longitude %>
+
+<%= place.user_id %>
+<%= link_to 'Show', place %> |
+
+ <% if user_signed_in? %>
+	  <% if current_user.id == place.user_id %></strong>.
+
+<%= link_to 'Edit', edit_place_path(place) %> |
+<%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+
+	    <% end %>
+	<% end %>
+
+      </div>
+    <% end %>
+  </div>
+<% end %>
 
 <br>
 
