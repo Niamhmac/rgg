@@ -67,16 +67,16 @@ Overall : <%= rating_for_user @place, current_user, "autism_friendly", :star => 
 
 <div class="row">
   <div class="span9">
-    <%= image_tag(@place.picture_url, :width => "100%") if @place.picture.present? %>
+    <%= image_tag(@place.picture_url, :width => 600) if @place.picture.present? %>
   </div>
 
   <div class="span3">
     <p><b>Name: </b><%= @place.name %></p>
 
-    <p><b>User Rating as Autism-friendly: </b><%= rating_for @place, "autism_friendly" %></p>
-    <p><b>User Overall Rating: </b><%= rating_for @place, "overall" %></p>
-    <p>Your <b>Vote as Autism-friendly: </b><%= rating_for_user @place, current_user, "autism_friendly", :star => 7 %></p>
-    <p>Your <b>Overall Vote: </b><%= rating_for_user @place, current_user, "autism_friendly", :star => 7 %></p>
+    <p><b> Rating as Autism-friendly: </b><%= rating_for @place, "autism_friendly" %></p>
+    <p><b> Overall Rating: </b><%= rating_for @place, "overall" %></p>
+    <p> <b> Your Vote as Autism-friendly: </b><%= rating_for_user @place, current_user, "autism_friendly", :star => 7 %></p>
+    <p> <b> Your Overall Vote: </b><%= rating_for_user @place, current_user, "autism_friendly", :star => 7 %></p>
 
     <p><b>Description: </b><%= @place.description %></p>
     <p><b>Address: </b><%= @place.address %></p>

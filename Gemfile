@@ -44,6 +44,8 @@ group :development, :test do
   #line from tutorial
   gem 'devise'
   gem "letsrate", :git => "git://github.com/iammyr/letsrate.git"
+  gem 'carrierwave'
+  gem 'mini_magick', '3.5.0'
 
 
 end
